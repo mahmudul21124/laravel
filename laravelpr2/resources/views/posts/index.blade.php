@@ -1,5 +1,4 @@
-@extends ('layout')
-
+@extends('layout')
 @section('content')
 
 @if (session('msg'))
@@ -9,7 +8,7 @@
 <div class="row">
     <div class="col-lg-12">
         <h1>Post List</h1>
-        <a href="{{route('posts.create')}}" class="btn btn-success float-right">New Post</a>
+        <a href="{{route('posts.create')}}" class="btn btn-success float-right">New Post</a><br><br>
         <table class="table table-striped table-inverse table-responsive">
             <thead class="thead-inverse">
                 <tr>
@@ -33,8 +32,11 @@
                     <td>{{$post->name}}</td>
                     <td>{{$post->detail}}</td>
                     <td><img src="/images/{{$post->image}}" width="100"></td>
-                    <td>Edit | 
-                        
+                    <td>
+                        <a class="btn btn-primary" href="{{ route('posts.edit',$post->id) }}">Edit</a> |
+                        <a class="btn btn-dark" href="{{ route('posts.show',$post->id) }}">Show</a>
+                     | 
+    
                     <form action="{{route('posts.destroy',$post->id)}}" method="post">
                         @csrf
                         @method('DELETE')

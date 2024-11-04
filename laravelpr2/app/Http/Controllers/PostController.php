@@ -13,9 +13,13 @@ class PostController extends Controller
     public function index()
     {
         //$posts = Post::all();
+
         $posts = Post::orderBy('id', 'desc')->get();
+
         //$posts = Post::latest()->paginate(5);
+        
         //dd($posts);
+
         return view('posts.index', compact('posts'))->with('sn', 1);
         //return view('posts.index',compact('posts'))->with('sn', (request()->input('page', 1) - 1) * 5);
     }
@@ -60,7 +64,7 @@ class PostController extends Controller
      */
     public function show(Post $post)
     {
-        //
+        return view('posts.show', compact('post'));
     }
 
     /**
@@ -68,7 +72,8 @@ class PostController extends Controller
      */
     public function edit(Post $post)
     {
-        //
+        //dd($post);
+        return view('posts.edit', compact('post'));
     }
 
     /**
@@ -76,7 +81,26 @@ class PostController extends Controller
      */
     public function update(Request $request, Post $post)
     {
-        //
+        $request->validate([
+            'name' => 'required',
+            'detail' => 'required',
+            'image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+        ]);
+  
+        $input = $request->all();
+  
+        if ($image = $request->file('image')) {
+            $destinationPath = 'images/';
+            $postImage = date('YmdHis') . "." . $image->getClientOriginalExtension();
+            $image->move($destinationPath, $postImage);
+            $input['image'] = "$postImage";
+        }else{
+            unset($input['image']);
+        }
+          
+        $post->update($input);
+  
+        return redirect()->route('posts.index')->with('msg','Post Update Successfully');
     }
 
     /**

@@ -20,7 +20,7 @@
 <body>
 
     <div class="jumbotron text-center" style="margin-bottom:0">
-        <h1>My First Bootstrap 4 Page</h1>
+        <h1>Laravel Crud Operation</h1>
         <p>Resize this responsive page to see the effect!</p>
     </div>
 
@@ -32,10 +32,10 @@
         <div class="collapse navbar-collapse" id="collapsibleNavbar">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Link</a>
+                    <a class="nav-link" href="/">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Link</a>
+                    <a class="nav-link" href="/posts">Posts</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Link</a>
