@@ -35,6 +35,6 @@ Route::get('/admin', function () {
 
 Route::get('/signup', function () {
     return view('signup');
-})->name('register');
+})->name('signup');
 
 require __DIR__.'/auth.php';
