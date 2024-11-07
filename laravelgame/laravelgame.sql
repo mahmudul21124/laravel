@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 06, 2024 at 07:55 AM
+-- Generation Time: Nov 07, 2024 at 08:05 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -57,7 +57,8 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (1, '2014_10_12_000000_create_users_table', 1),
 (2, '2014_10_12_100000_create_password_reset_tokens_table', 1),
 (3, '2019_08_19_000000_create_failed_jobs_table', 1),
-(4, '2019_12_14_000001_create_personal_access_tokens_table', 1);
+(4, '2019_12_14_000001_create_personal_access_tokens_table', 1),
+(5, '2024_11_07_035830_create_students_table', 2);
 
 -- --------------------------------------------------------
 
@@ -89,6 +90,38 @@ CREATE TABLE `personal_access_tokens` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `students`
+--
+
+CREATE TABLE `students` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `name` varchar(50) NOT NULL,
+  `email` varchar(100) NOT NULL,
+  `phone` varchar(20) NOT NULL,
+  `address` varchar(200) NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `students`
+--
+
+INSERT INTO `students` (`id`, `name`, `email`, `phone`, `address`, `created_at`, `updated_at`) VALUES
+(1, 'ASM Abdullah', 'abdullah@gmail.com', '01246234652', 'Cumilla', NULL, NULL),
+(2, 'Jamil', 'jamil@gmail.com', '01246234652', 'Cumilla', NULL, NULL),
+(3, 'Saif', 'saif@gmail.com', '01246234652', 'Cumilla', NULL, NULL),
+(4, 'mohiuddin', 'mohiuddin@gmail.com', '01246234652', 'Cumilla', NULL, NULL),
+(5, 'Nazrul', 'Nazrul@gmail.com', '01246234652', 'Cumilla', NULL, NULL),
+(6, 'Nusrat', 'nusrat@gmail.com', '01246234652', 'Cumilla', NULL, NULL),
+(7, 'Arif', 'arif@gmail.com', '01246234652', 'Cumilla', NULL, NULL),
+(8, 'Rummana', 'rummana@gmail.com', '01246234652', 'Cumilla', NULL, NULL),
+(9, 'Mahmudul', 'mahmudul@gmail.com', '01246234652', 'Cumilla', NULL, NULL),
+(10, 'Tanim', 'tanim@gmail.com', '01246234652', 'Cumilla', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -146,6 +179,12 @@ ALTER TABLE `personal_access_tokens`
   ADD KEY `personal_access_tokens_tokenable_type_tokenable_id_index` (`tokenable_type`,`tokenable_id`);
 
 --
+-- Indexes for table `students`
+--
+ALTER TABLE `students`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `users`
 --
 ALTER TABLE `users`
@@ -166,13 +205,19 @@ ALTER TABLE `failed_jobs`
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `personal_access_tokens`
 --
 ALTER TABLE `personal_access_tokens`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `students`
+--
+ALTER TABLE `students`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `users`

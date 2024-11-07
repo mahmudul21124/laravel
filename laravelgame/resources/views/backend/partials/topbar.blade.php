@@ -176,10 +176,10 @@
         <li class="float-left">
             <a href="index.html" class="logo">
                 <span class="logo-lg">
-                    <img src="assets/images/logo-light.png" alt="" height="22">
+                    <img src="assets/images/his3.png" alt="" height="50" width="100">
                 </span>
                 <span class="logo-sm">
-                    <img src="assets/images/logo-sm.png" alt="" height="24">
+                    <img src="assets/images/his2.png" alt="" height="40">
                 </span>
             </a>
         </li>
