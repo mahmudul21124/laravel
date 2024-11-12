@@ -20,7 +20,8 @@ Route::get('/', function () {
 
 Route::get('/dashboard', function () {
     //return view('dashboard');
-    return view('backend.dashboard');
+    //return view('backend.dashboard');
+    return view('backend.dashboard2');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
@@ -30,11 +31,13 @@ Route::middleware('auth')->group(function () {
 });
 
 Route::get('/admin', function () {
-    return view('signin');
+    //return view('signin');
+    return view('signin2');
 })->name('admin');
 
-Route::get('/admin/signup', function () {
-    return view('signup');
-});
+Route::get('/signup', function () {
+    //return view('signup');
+    return view('signup2');
+})->name('signup');
 
 require __DIR__.'/auth.php';

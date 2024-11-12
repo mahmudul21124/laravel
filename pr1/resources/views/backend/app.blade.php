@@ -1195,7 +1195,7 @@
                 <!-- // END drawer-layout__content -->
 
                 <!-- Sidebar -->
-                 @include('backend.partials.sidebar')
+                @include('backend.partials.sidebar')
             </div>
             <!-- // END drawer-layout -->
 
