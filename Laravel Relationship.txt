@@ -1,0 +1,7 @@
+Laravel Relationship
+
+ 1. make migrations (edit as i want in {database>     migrations} )
+ 2. make model 
+ 3. make a function using hasMany & belongsTo
+ 4. 
+ 
