@@ -35,74 +35,99 @@
                                     </a>
                                 </div>
                                 <h4 class="text-center mt-4">Log into Your Account</h4>
+
                                 <form action="{{ route('register') }}" novalidate method="POST">
                                     @csrf
-                                        <div class="form-group">
-                                            <label class="text-label" for="name_2">Name:</label>
-                                            <div class="input-group input-group-merge">
-                                                <input id="name_2" type="text" name="name" required="" class="form-control form-control-prepended"
-                                                    placeholder="Enter your fullname">
-                                                <div class="input-group-prepend">
-                                                    <div class="input-group-text">
-                                                        <span class="fa fa-user"></span>
-                                                    </div>
+
+                                    <div class="form-group">
+                                        <label class="text-label" for="name_2">Select Role</label>
+                                        <div class="input-group input-group-merge">
+                                            <select name="role" class="block mt-1 w-full">
+                                                <option value="">Select One</option>
+                                                <option value="teacher">Teacher</option>
+                                                <option value="student">Student</option>
+                                            </select>
+                                            <div class="input-group-prepend">
+                                                <div class="input-group-text">
+                                                    <span class="fa fa-user"></span>
                                                 </div>
                                             </div>
                                         </div>
+                                    </div>
 
-                                        <div class="form-group">
-                                            <label class="text-label" for="email_2">Email Address:</label>
-                                            <div class="input-group input-group-merge">
-                                                <input id="email_2" type="email" name="email" required="" class="form-control form-control-prepended"
-                                                    placeholder="Enter your email">
-                                                <div class="input-group-prepend">
-                                                    <div class="input-group-text">
-                                                        <span class="fa fa-envelope"></span>
-                                                    </div>
+                                    <div class="form-group">
+                                        <label class="text-label" for="name_2">Name:</label>
+                                        <div class="input-group input-group-merge">
+                                            <input id="name_2" type="text" name="name" required=""
+                                                class="form-control form-control-prepended"
+                                                placeholder="Enter your fullname">
+                                            <div class="input-group-prepend">
+                                                <div class="input-group-text">
+                                                    <span class="fa fa-user"></span>
                                                 </div>
                                             </div>
                                         </div>
+                                    </div>
 
-                                        <div class="form-group">
-                                            <label class="text-label" for="password_2">Password:</label>
-                                            <div class="input-group input-group-merge">
-                                                <input id="password_2" type="password" name="password" required="" class="form-control form-control-prepended"
-                                                    placeholder="Enter your password">
-                                                <div class="input-group-prepend">
-                                                    <div class="input-group-text">
-                                                        <span class="fa fa-key"></span>
-                                                    </div>
+                                    <div class="form-group">
+                                        <label class="text-label" for="email_2">Email Address:</label>
+                                        <div class="input-group input-group-merge">
+                                            <input id="email_2" type="email" name="email" required=""
+                                                class="form-control form-control-prepended"
+                                                placeholder="Enter your email">
+                                            <div class="input-group-prepend">
+                                                <div class="input-group-text">
+                                                    <span class="fa fa-envelope"></span>
                                                 </div>
                                             </div>
                                         </div>
+                                    </div>
 
-                                        <div class="form-group">
-                                            <label class="text-label" for="password_2">Password:</label>
-                                            <div class="input-group input-group-merge">
-                                                <input id="password_2" type="password" name="password_confirmation" required="" class="form-control form-control-prepended"
-                                                    placeholder="Repeat your password">
-                                                <div class="input-group-prepend">
-                                                    <div class="input-group-text">
-                                                        <span class="fa fa-key"></span>
-                                                    </div>
+                                    <div class="form-group">
+                                        <label class="text-label" for="password_2">Password:</label>
+                                        <div class="input-group input-group-merge">
+                                            <input id="password_2" type="password" name="password" required=""
+                                                class="form-control form-control-prepended"
+                                                placeholder="Enter your password">
+                                            <div class="input-group-prepend">
+                                                <div class="input-group-text">
+                                                    <span class="fa fa-key"></span>
                                                 </div>
                                             </div>
                                         </div>
+                                    </div>
 
-                                        <div class="form-group mb-5">
-                                            <div class="custom-control custom-checkbox">
-                                                <input type="checkbox" checked="" class="custom-control-input" id="terms" />
-                                                <label class="custom-control-label" for="terms">I accept <a href="#">Terms and
-                                                        Conditions</a></label>
+                                    <div class="form-group">
+                                        <label class="text-label" for="password_2">Password:</label>
+                                        <div class="input-group input-group-merge">
+                                            <input id="password_2" type="password" name="password_confirmation"
+                                                required="" class="form-control form-control-prepended"
+                                                placeholder="Repeat your password">
+                                            <div class="input-group-prepend">
+                                                <div class="input-group-text">
+                                                    <span class="fa fa-key"></span>
+                                                </div>
                                             </div>
                                         </div>
+                                    </div>
 
-                                        <div class="form-group text-center">
-                                            <button class="btn btn-primary mb-2" type="submit">Create Account</button><br>
-                                            <a class="text-body text-underline" href="/admin">Have an account? Login</a>
+                                    <div class="form-group mb-5">
+                                        <div class="custom-control custom-checkbox">
+                                            <input type="checkbox" checked="" class="custom-control-input"
+                                                id="terms" />
+                                            <label class="custom-control-label" for="terms">I accept <a
+                                                    href="#">Terms and
+                                                    Conditions</a></label>
                                         </div>
+                                    </div>
 
-                                    </form>
+                                    <div class="form-group text-center">
+                                        <button class="btn btn-primary mb-2" type="submit">Create
+                                            Account</button><br>
+                                        <a class="text-body text-underline" href="/admin">Have an account? Login</a>
+                                    </div>
+
+                                </form>
                                 <div class="text-center">
                                     <h5 class="mb-5">Or with Login</h5>
                                     <ul class="list-inline">
@@ -119,7 +144,8 @@
                                                 class="btn btn-google-plus"><i class="fa fa-google-plus"></i></a>
                                         </li>
                                     </ul>
-                                    <p class="mt-5">Dont have an account? <a href="javascript:void()">Register Now</a>
+                                    <p class="mt-5">Dont have an account? <a href="javascript:void()">Register
+                                            Now</a>
                                     </p>
                                 </div>
                             </div>

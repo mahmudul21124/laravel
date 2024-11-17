@@ -7,9 +7,21 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Dashboard</title>
     <!-- Favicon icon -->
-    <link rel="icon" type="image/png" sizes="16x16" href="asset/images/favicon.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('asset/images/favicon.png') }}">
     <!-- Custom Stylesheet -->
-    <link href="main/css/style.css" rel="stylesheet">
+    <link href="{{ asset('main/css/style.css') }}" rel="stylesheet">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css"
+        integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap-theme.min.css"
+        integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js"
+        integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous">
+    </script>
 
 </head>
 
@@ -42,7 +54,7 @@
         <!--**********************************
             Sidebar start
         ***********************************-->
-        @include('backend.partials.sidebar2')
+        {{-- @include('backend.partials.sidebar2') --}}
         <!--**********************************
             Sidebar end
         ***********************************-->
@@ -50,7 +62,7 @@
         <!--**********************************
             Content body start
         ***********************************-->
-    @yield('content')
+        @yield('content')
         <!--**********************************
             Content body end
         ***********************************-->
@@ -80,15 +92,16 @@
     <!--**********************************
         Scripts
     ***********************************-->
-    <script src="asset/plugins/common/common.min.js"></script>
-    <script src="main/js/custom.min.js"></script>
-    <script src="main/js/settings.js"></script>
-    <script src="main/js/gleek.js"></script>
-    <script src="main/js/styleSwitcher.js"></script>
+    <script src="{{ asset('asset/plugins/common/common.min.js') }}"></script>
+    <script src="{{ asset('main/js/custom.min.js') }}"></script>
+    <script src="{{ asset('main/js/settings.js') }}"></script>
+    <script src="{{ asset('main/js/gleek.js') }}"></script>
+    <script src="{{ asset('main/js/styleSwitcher.js') }}"></script>
+    <script src="{{ asset('asset/plugins/appear/appear.min.js') }}"></script>
 
-    <script src="asset/plugins/raphael/raphael.min.js"></script>
-    <script src="asset/plugins/morris/morris.min.js"></script>
-    <script src="main/js/dashboard/dashboard-18.js"></script>
+    <script src="{{ asset('asset/plugins/raphael/raphael.min.js') }}"></script>
+    <script src="{{ asset('asset/plugins/morris/morris.min.js') }}"></script>
+    <script src="{{ asset('main/js/dashboard/dashboard-18.js') }}"></script>
 </body>
 
 </html>

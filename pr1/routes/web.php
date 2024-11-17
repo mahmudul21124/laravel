@@ -1,6 +1,10 @@
 <?php
 
+use App\Http\Controllers\AdminPanel\AdminController;
+use App\Http\Controllers\ClassController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\StudentPanel\StudentController;
+use App\Http\Controllers\TeacherPanel\TeacherController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -41,3 +45,19 @@ Route::get('/signup', function () {
 })->name('signup');
 
 require __DIR__.'/auth.php';
+
+
+Route::middleware(['auth', 'role:admin'])->group(function () {
+    Route::get('admin/dashboard', [AdminController::class, 'index'])->name('admin.dashboard');
+
+    // class URL
+    Route::get ('/admin/class/list', [ClassController::class, 'list']);
+});
+
+Route::middleware(['auth', 'role:teacher'])->group(function () {
+    Route::get('teacher/dashboard', [TeacherController::class, 'index'])->name('teacher.dashboard');
+});
+
+Route::middleware(['auth', 'role:student'])->group(function () {
+    Route::get('student/dashboard', [StudentController::class, 'index'])->name('student.dashboard');
+});

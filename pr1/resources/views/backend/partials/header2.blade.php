@@ -37,7 +37,7 @@
                             <ul>
                                 <li class="notification-unread">
                                     <a href="javascript:void()">
-                                        <img class="pull-left mr-3 avatar-img" src="asset/images/avatar/1.jpg"
+                                        <img class="pull-left mr-3 avatar-img" src="{{asset('asset/images/avatar/1.jpg')}}"
                                             alt="">
                                         <div class="notification-content">
                                             <div class="notification-heading">Druid Wensleydale</div>
@@ -49,7 +49,7 @@
                                 </li>
                                 <li class="notification-unread">
                                     <a href="javascript:void()">
-                                        <img class="pull-left mr-3 avatar-img" src="asset/images/avatar/2.jpg"
+                                        <img class="pull-left mr-3 avatar-img" src="{{asset('asset/images/avatar/2.jpg')}}"
                                             alt="">
                                         <div class="notification-content">
                                             <div class="notification-heading">Fig Nelson</div>
@@ -61,7 +61,7 @@
                                 </li>
                                 <li>
                                     <a href="javascript:void()">
-                                        <img class="pull-left mr-3 avatar-img" src="asset/images/avatar/3.jpg"
+                                        <img class="pull-left mr-3 avatar-img" src="{{asset('asset/images/avatar/3.jpg')}}"
                                             alt="">
                                         <div class="notification-content">
                                             <div class="notification-heading">Bailey Wonger</div>
@@ -73,7 +73,7 @@
                                 </li>
                                 <li>
                                     <a href="javascript:void()">
-                                        <img class="pull-left mr-3 avatar-img" src="asset/images/avatar/4.jpg"
+                                        <img class="pull-left mr-3 avatar-img" src="{{asset('asset/images/avatar/4.jpg')}}"
                                             alt="">
                                         <div class="notification-content">
                                             <div class="notification-heading">Bodrum Salvador</div>
@@ -155,7 +155,7 @@
                 </li>
                 <li class="icons">
                     <a href="javascript:void(0)" class="log-user">
-                        <img src="asset/images/avatar/1.jpg" alt=""> <span>George Martin</span>
+                        <img src="{{asset('asset/images/avatar/1.jpg')}}" alt=""> <span>Admin</span>
                         <i class="fa fa-caret-down f-s-14" aria-hidden="true"></i>
                     </a>
                     <div class="drop-down dropdown-profile animated bounceInDown">
