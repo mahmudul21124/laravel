@@ -63,4 +63,8 @@ class BookController extends Controller
             session()->flash('success', 'Book successfully deleted.');
         }
     }
+
+    public function checkout(){
+        return view('checkout');
+    }
 }

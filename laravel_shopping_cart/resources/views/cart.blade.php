@@ -41,7 +41,7 @@
             <td colspan="5" class="text-right">
                 <a href="{{ url('/home') }}" class="btn btn-primary"><i class="fa fa-angle-left"></i> Continue
                     Shopping</a>
-                <button class="btn btn-danger">Checkout</button>
+                <a href="{{url('/checkout')}}" class="btn btn-warning">Checkout <i class="fa fa-angle-right"></i></a>
             </td>
         </tr>
     </tfoot>
@@ -58,7 +58,7 @@
             url: "{{ route('update.sopping.cart') }}",
             method: "patch",
             data: {
-                _token: '{{ csrf_token() }}',
+                _token: '{{ csrf_token() }}', 
                 id: ele.parents("tr").attr("rowId"),
                 quantity: ele.val()
             },
