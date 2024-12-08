@@ -71,8 +71,8 @@ class StripeController extends Controller
 
     public function success()
     {
-        //return 'We have received your order.....';
-        return response('We have received your order.....', 200)->redirect('/home');
+        return 'We have received your order.....';
+        //return response('We have received your order.....', 200)->redirect('/home');
 
     }
 
