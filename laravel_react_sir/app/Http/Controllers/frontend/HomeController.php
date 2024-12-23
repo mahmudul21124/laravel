@@ -13,7 +13,7 @@ class HomeController extends Controller
     public function index()
     {
         $doctors = Doctor::orderBy('name')->get();
-        $specialists = Specialist::orderBy('name')->limit(5)->get();
+        $specialists = Specialist::all();
 
         // return view('frontend.home', compact('doctors', 'specialists'));
 

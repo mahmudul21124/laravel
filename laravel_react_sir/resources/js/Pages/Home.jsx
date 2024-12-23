@@ -15,28 +15,22 @@ import Brand_area from "@/Sections/Brand_area";
 import Blog_area from "@/Sections/Blog_area";
 import Cta_area from "@/Sections/Cta_area";
 import Footer from "@/Sections/Footer";
+import Back_to_the_top from "@/Sections/Back_to_the_top";
+import { usePage } from "@inertiajs/react";
 
 export default function Home() {
+    const { doctors, specialists } = usePage().props;
+    const SpName = (sid) => 
+        {const sp = specialists.find(sp => sp.id===sid);
+            return sp ? sp.name : 'Unknown';
+        };
+
+    console.log(doctors);
+
     return (
         <>
             {/* <!-- back to top start --> */}
-            <div className="back-to-top-wrapper">
-                <button
-                    id="back_to_top"
-                    type="button"
-                    className="back-to-top-btn"
-                >
-                    <svg width="12" height="7" viewBox="0 0 12 7" fill="none">
-                        <path
-                            d="M11 6L6 1L1 6"
-                            stroke="currentColor"
-                            strokeWidth="1.5"
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                        />
-                    </svg>
-                </button>
-            </div>
+            <Back_to_the_top />
             {/*<!-- back to top end -->*/}
 
             {/*<!-- search popup start -->*/}
@@ -76,7 +70,115 @@ export default function Home() {
                 {/* video area end */}
 
                 {/* team area start */}
-                <Team_area />
+                <section className="rr-team-4-area pt-100 pb-80 fix">
+                    <div className="container">
+                        <div className="row mb-40">
+                            <div
+                                className="col-xl-12 wow rrfadeUp"
+                                data-wow-duration=".9s"
+                                data-wow-delay=".3s"
+                            >
+                                <div className="rr-price-2-title-box text-center mb-45">
+                                    <span className="rr-section-subtitle p-relative">
+                                        <img
+                                            src="assets/img/testimonial/section-icon.png"
+                                            alt="img"
+                                        />{" "}
+                                        Our Team Member{" "}
+                                        <img
+                                            src="assets/img/testimonial/section-icon.png"
+                                            alt="img"
+                                        />
+                                    </span>
+                                    <h4 className="rr-section-title rr-section-title-space">
+                                        Meet Better The Team Doctor{" "}
+                                    </h4>
+                                </div>
+                            </div>
+                            {/* Loop Start */}
+                            {doctors.map(({ id, name, specialist_id, email, photo, status }) => (
+                                <div
+                                    className="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12 wow rrfadeUp"
+                                    data-wow-duration=".9s"
+                                    data-wow-delay=".3s"
+                                >
+                                    <div className="rr-team-4-item p-relative mb-60">
+                                        <div className="rr-team-4-thumb p-relative ">
+                                            <div className="rr-team-4-img">
+                                                <img
+                                                    className="w-100"
+                                                    src={photo}
+                                                    alt="img"
+                                                />
+                                            </div>
+                                            <div className="rr-team-4-icon">
+                                                <a href="team.html">
+                                                    <img
+                                                        src={photo}
+                                                        alt="img"
+                                                    />
+                                                </a>
+                                            </div>
+                                            <div className="rr-team-4-social">
+                                                <span className="icon" />
+                                                <a
+                                                    className=" mt-20 rr-el-team-social"
+                                                    href="#"
+                                                >
+                                                    <i className="fab fa-facebook-f" />
+                                                </a>
+                                                <a
+                                                    className="rr-el-team-social"
+                                                    href="#"
+                                                >
+                                                    <i className="fab fa-twitter" />
+                                                </a>
+                                                <a
+                                                    className="rr-el-team-social"
+                                                    href="#"
+                                                >
+                                                    <i className="fab fa-instagram" />
+                                                </a>
+                                            </div>
+                                        </div>
+
+                                        <div className="rr-team-4-content text-center p-relative">
+                                            <h3 className="rr-team-4-title">
+                                                <a href="team.html">
+                                                    {name}
+                                                </a>
+                                            </h3>
+                                            <span>{SpName(specialist_id)}</span>
+                                        </div>
+                                        <div className="rr-team-4-arrow">
+                                            {" "}
+                                            <a href="team.html">
+                                                <i className="fa-solid fa-arrow-up" />
+                                            </a>
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                                ))}
+                            
+                            
+                        </div>
+                        <div className="row">
+                            <div
+                                className="team-btn text-center wow rrfadeUp"
+                                data-wow-duration=".9s"
+                                data-wow-delay=".9s"
+                            >
+                                <a className="rr-btn-black" href="team.html">
+                                    <span>
+                                        View all Team{" "}
+                                        <i className="fa-sharp fa-solid fa-plus" />
+                                    </span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </section>
                 {/* team area end */}
 
                 {/* COUNTER  area start */}

@@ -1,3 +1,6 @@
+import About from "@/Pages/About";
+import Contact from "@/Pages/Contact";
+import Home from "@/Pages/Home";
 import { Link } from "@inertiajs/react";
 import React from "react";
 
@@ -141,7 +144,8 @@ export default function Header() {
                 </div>
             </section>
             {/*<!-- header main area end -->*/}
-    
+
+            
             <header className="rr-header-height z-index-3">
                 {/*<!-- header area start -->*/}
                 <div id="header-sticky" className="rr-header-area">
@@ -158,10 +162,10 @@ export default function Header() {
                                     <nav className="rr-main-menu-content">
                                         <ul>
                                             <li className="">
-                                                <Link to="/">Home</Link>
+                                                <Link href={route('home')}>Home</Link>
                                             </li>
                                             <li>
-                                                <Link to="/about">
+                                                <Link href={route('about')}>
                                                     about us
                                                 </Link>
                                             </li>
@@ -248,7 +252,7 @@ export default function Header() {
                                                 </ul>
                                             </li>
                                             <li>
-                                                <Link to="contact.html">
+                                                <Link href={route('contact')}>
                                                     Contact
                                                 </Link>
                                             </li>
