@@ -270,7 +270,7 @@ export default function Header() {
                                     <div className="rr-header-1-contat d-none d-md-block ml-30">
                                         <Link
                                             className="rr-btn-border"
-                                            to="contact.html"
+                                            href={ route('frontend_appointment.create') }
                                         >
                                             <span>
                                                 Make Appointment{" "}
