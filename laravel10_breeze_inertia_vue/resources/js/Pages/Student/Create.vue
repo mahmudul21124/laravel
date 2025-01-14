@@ -8,11 +8,12 @@ const stu = useForm({
     gender: "",
     district: "",
     language: [],
-    photo: "",
+    photo: null
 })
 
 const submit = () =>{
     stu.post(route('students.store'))
+    // stu.post("/students")
 }
 
 console.log(stu)
@@ -52,11 +53,11 @@ console.log(stu)
                 <label>District</label><br>
                 <select class="form-control" v-model="stu.district">
                     <option value="">Select One</option>
-                    <option value="0">Dhaka</option>
-                    <option value="1">Narayanganj</option>
-                    <option value="2">Rajshashi</option>
-                    <option value="3">Pabna</option>
-                    <option value="4">Chittagong</option>
+                    <option value="Dhaka">Dhaka</option>
+                    <option value="Narayanganj">Narayanganj</option>
+                    <option value="Rajshashi">Rajshashi</option>
+                    <option value="Pabna">Pabna</option>
+                    <option value="Chittagong">Chittagong</option>
                 </select>
             </div>
 
@@ -71,7 +72,7 @@ console.log(stu)
 
             <div class="form-group">
                 <label>Photo</label><br>
-                <input type="file" class="form-control" >
+                <input type="file" class="form-control" @input="stu.photo = $event.target.files[0]">
             </div>
 
             <button type="submit" class="btn btn-info">Submit</button> &nbsp;

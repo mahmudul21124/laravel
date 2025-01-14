@@ -15,7 +15,6 @@ class Student extends Model
         'gender',
         'district',
         'languages',
-        'photo',
         'dob'
     ];
 }

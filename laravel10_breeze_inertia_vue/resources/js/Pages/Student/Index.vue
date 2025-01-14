@@ -1,5 +1,5 @@
 <script setup>
-import { useForm, Link } from "@inertiajs/vue3";
+import { Link } from "@inertiajs/vue3";
 
 defineProps({
   students: {
@@ -7,10 +7,15 @@ defineProps({
     default: () => [],
   },
 });
+
+// const LangConvert = (lang) => {
+//   return JSON.parse(lang).join(', ');
+// }
 </script>
 
 <template>
   <div class="container">
+    
     <Link :href="route('students.create')" class="btn btn-info">Add New</Link>
     <h1 class="display-1">Students List</h1>
     <table class="table table-bordered">
@@ -30,12 +35,12 @@ defineProps({
         <tr v-for="x in students" :key="x.id">
           <td>{{ x.id }}</td>
           <td>{{ x.name }}</td>
-          <td>{{ x.photo }}</td>
+          <td><img :src="x.photo" alt="" width="100"></td>
           <td>{{ x.address }}</td>
           <td>{{ x.gender }}</td>
           <td>{{ x.dob }}</td>
           <td>{{ x.district }}</td>
-          <td>{{ x.languages }}</td>
+          <td> {{ JSON.parse(x.languages).join(', ') }}</td>
         </tr>
       </tbody>
       <tfoot>

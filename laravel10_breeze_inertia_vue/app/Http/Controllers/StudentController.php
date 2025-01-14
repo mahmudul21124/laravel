@@ -30,7 +30,22 @@ class StudentController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $student = new Student($request->all());
+        $student['languages'] = json_encode($request->language);
+
+        if ($image = $request->file('photo')) {
+            $destinationPath = 'images/';
+            $postImage = date('YmdHis') . "." . $image->getClientOriginalExtension();
+            $image->move($destinationPath, $postImage);
+            $student['photo'] = $destinationPath.$postImage;
+        }
+        else{
+            $student['photo'] = 'images/nophoto.jpg';
+        }
+        // return $student; 
+        $student->save();
+
+        return redirect()->route('students.index')->with('msg', "Successfully created");
     }
 
     /**
